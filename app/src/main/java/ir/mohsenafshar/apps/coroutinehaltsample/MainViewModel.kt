@@ -1,14 +1,16 @@
 package ir.mohsenafshar.apps.coroutinehaltsample
 
 import android.util.Log
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import ir.mohsenafshar.apps.coroutinehaltsample.di.RemoteRepositoryQualifier
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class MainViewModel @ViewModelInject constructor(@RemoteRepositoryQualifier private val remoteRepository: Repository) : ViewModel() {
 
     private val _userLiveData = MutableLiveData<List<User>>()
     val userLiveData: LiveData<List<User>>
@@ -37,8 +39,7 @@ class MainViewModel : ViewModel() {
 
     fun requestData() {
         viewModelScope.launch {
-            val api = Network.getApi()
-            val dataList = api.getList()
+            val dataList = remoteRepository.getList()
 
             _userLiveData.postValue(dataList)
             Log.d("Logger", "requestData " + this.toString())

@@ -4,10 +4,13 @@ import com.google.gson.Gson
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import javax.inject.Inject
 
-object Network {
+class Network @Inject constructor(){
 
-    const val BASE_URL = "http://0f3a368e305b.ngrok.io"
+    companion object {
+        const val BASE_URL = "http://bdc151b2e38d.ngrok.io"
+    }
 
     private fun getRetrofit(gson: Gson): Retrofit {
         return Retrofit.Builder()
@@ -16,7 +19,7 @@ object Network {
             .build()
     }
 
-    inline fun <reified T> provideApi(retrofit: Retrofit): T {
+    private inline fun <reified T> provideApi(retrofit: Retrofit): T {
         return retrofit.create(T::class.java)
     }
 
