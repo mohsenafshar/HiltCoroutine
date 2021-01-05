@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         })
 
         viewModel.userLiveData.observe(this, { dataList ->
-
             Log.d("Logger", dataList.toString())
         })
 

@@ -29,8 +29,6 @@ class Network @Inject constructor(){
 }
 
 interface Api {
-
     @GET("/")
     suspend fun getList(): List<User>
-
 }

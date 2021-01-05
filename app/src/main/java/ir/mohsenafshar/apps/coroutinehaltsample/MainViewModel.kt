@@ -24,15 +24,10 @@ class MainViewModel @ViewModelInject constructor(@RemoteRepositoryQualifier priv
         get() = _taps
 
     fun updateTaps() {
-        // launch a coroutine in viewModelScope
         viewModelScope.launch {
             tapCount++
-            // suspend this coroutine for one second
             delay(5_000)
-            // resume in the main dispatcher
-            // _snackbar.value can be called directly from main thread
             _taps.postValue("$tapCount taps")
-
             Log.d("Logger", "updateTaps " + this.toString())
         }
     }
