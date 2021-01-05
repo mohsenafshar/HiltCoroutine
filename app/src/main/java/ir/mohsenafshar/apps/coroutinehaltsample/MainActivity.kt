@@ -6,17 +6,8 @@ import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import dagger.Binds
-import dagger.Component
-import dagger.MapKey
-import dagger.Module
-import dagger.multibindings.IntoMap
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.inject.Inject
-import javax.inject.Provider
-import kotlin.reflect.KClass
 
 class MainActivity : AppCompatActivity() {
 
