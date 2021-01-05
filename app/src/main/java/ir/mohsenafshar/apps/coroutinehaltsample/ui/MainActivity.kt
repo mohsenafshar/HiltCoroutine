@@ -1,4 +1,4 @@
-package ir.mohsenafshar.apps.coroutinehaltsample
+package ir.mohsenafshar.apps.coroutinehaltsample.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -6,8 +6,8 @@ import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
+import ir.mohsenafshar.apps.coroutinehaltsample.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint

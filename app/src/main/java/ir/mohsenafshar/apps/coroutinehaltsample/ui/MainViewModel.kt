@@ -1,4 +1,4 @@
-package ir.mohsenafshar.apps.coroutinehaltsample
+package ir.mohsenafshar.apps.coroutinehaltsample.ui
 
 import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import ir.mohsenafshar.apps.coroutinehaltsample.data.Repository
 import ir.mohsenafshar.apps.coroutinehaltsample.di.RemoteRepositoryQualifier
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

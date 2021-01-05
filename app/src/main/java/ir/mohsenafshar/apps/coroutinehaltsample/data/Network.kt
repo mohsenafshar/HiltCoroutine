@@ -1,6 +1,7 @@
-package ir.mohsenafshar.apps.coroutinehaltsample
+package ir.mohsenafshar.apps.coroutinehaltsample.data
 
 import com.google.gson.Gson
+import ir.mohsenafshar.apps.coroutinehaltsample.ui.User
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
