@@ -20,7 +20,6 @@ import kotlin.reflect.KClass
 
 class MainActivity : AppCompatActivity() {
 
-    @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private val viewModel by viewModels<MainViewModel> { viewModelFactory }
 
@@ -28,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DaggerPresenterFactory.create().inject(this)
 
         viewModel.taps.observe(this, { taps ->
             btn.text = taps
